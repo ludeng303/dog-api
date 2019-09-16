@@ -26,8 +26,8 @@ li {
   padding:55px, 50px;
 }
 img{
-  width:150px;
-  height: 150px;
+  width:200px;
+  height: 200px;
 }
 .menu {
     margin: auto;
@@ -40,7 +40,7 @@ div{
   color:white;
   font-style:bold;
   text-align: right;
-  height: 200px;
+  height: 230px;
   width: 800px;
   overflow: scroll;
 }

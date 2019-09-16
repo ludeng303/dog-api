@@ -23,7 +23,7 @@ function fetchRandom() {
     let request = 'https://dog.ceo/api/breed/'+breed+'/images/random';
     fetch(request)
       .then(response => response.json())
-      .then(responseJson => getHTML3(responseJson))
+      .then(responseJson => getHTML3(responseJson, breed))
       .catch(error => alert('Something went wrong. Try again later.' + error));
 
   }
@@ -38,7 +38,7 @@ function getHTML2(responseJson) {
     ;
 }
 
-function getHTML3(responseJson){
+function getHTML3(responseJson, breed){
     let resp = responseJson.message;
     let badBreaad = "Breed not found (master breed does not exist)";
     if(resp === badBreaad){
@@ -47,7 +47,7 @@ function getHTML3(responseJson){
         <img src="nodogs.png" class="results-img">
     `
     document.getElementById("product-output").innerHTML = html3;
-    alert('[404 BREED NOT FOUND] visit https://dog.ceo/api/breeds/image/random for a list of breeds');
+    alert(breed + '   [404  NOT FOUND] Please retry input.');
     ;
     }else{
         html3 = `
