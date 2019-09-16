@@ -47,7 +47,7 @@ function getHTML3(responseJson){
         <img src="nodogs.png" class="results-img">
     `
     document.getElementById("product-output").innerHTML = html3;
-    alert('BREED NOT FOUND, they said. The breed in your input is not legit. No dog for you this time.');
+    alert('[404 BREED NOT FOUND] visit https://dog.ceo/api/breeds/image/random for a list of breeds');
     ;
     }else{
         html3 = `
