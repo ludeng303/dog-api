@@ -14,46 +14,44 @@ function fetchRandom() {
 
     fetch('https://dog.ceo/api/breeds/image/random')
       .then(response => response.json())
-      .then(responseJson => getHTML2(responseJson))
+      .then(responseJson => displayResults2(responseJson))
       .catch(error => alert('Something went wrong. Try again later.' + error));
 
   }
 
-  function fetchRandomBreed(breed) {
+function fetchRandomBreed(breed) {
     let request = 'https://dog.ceo/api/breed/'+breed+'/images/random';
     fetch(request)
       .then(response => response.json())
-      .then(responseJson => getHTML3(responseJson, breed))
+      .then(responseJson => displayResults3(responseJson, breed))
       .catch(error => alert('Something went wrong. Try again later.' + error));
 
   }
 
-function getHTML2(responseJson) {
-    //replace the existing image with the new one
+function displayResults2(responseJson) {
+    console.log(responseJson.message);
     html2 = html2 +
         `	
             <img src="${responseJson.message}" class="results-img">
         `
-        document.getElementById("product-output").innerHTML = html2;
+        document.getElementById("result").innerHTML = html2;
     ;
 }
 
-function getHTML3(responseJson, breed){
+function displayResults3(responseJson, breed){
     let resp = responseJson.message;
     let badBreaad = "Breed not found (master breed does not exist)";
-    if(resp === badBreaad){
-        html3 = `
 
-        <img src="nodogs.png" class="results-img">
-    `
-    document.getElementById("product-output").innerHTML = html3;
-    alert(breed + '   [404  NOT FOUND] Please retry input.');
-    ;
+    if(resp === badBreaad){
+        html3 = `<img src="nodogs.png" class="results-img">`;
+        document.getElementById('result').innerHTML=html3;
+        alert('404  [ ' + breed +  ' ]  NOT FOUND    Please try another input.');
     }else{
-        html3 = `
-        <img src="${responseJson.message}" class="results-img">
-    `;
-    document.getElementById("product-output").innerHTML = html3;
+        html3 = html3 +
+        `	
+            <img src="${responseJson.message}" class="results-img">
+        `    
+        document.getElementById('result').innerHTML=html3;
     }
 }
 
@@ -71,7 +69,7 @@ function watchForms() {
         }
     });
     $('#js-form-2').submit(event => {
-
+        removeHiddenSec();
         let numOfDogs = document.getElementById("js-input-2").value;
         event.preventDefault();
         for(let i=0; i<numOfDogs; i++){
@@ -80,9 +78,15 @@ function watchForms() {
         html2 = "<p> Dogs: </p>";
     });
     $('#js-form-3').submit(event => {
+        removeHiddenSec();
         let breed = document.getElementById("js-input-3").value;
         event.preventDefault();
         fetchRandomBreed(breed); 
         html3 = "<p> Dogs: </p>";
     });
+}
+
+function removeHiddenSec(){
+
+    document.getElementById('js-sec-result').removeAttribute('class');
 }
