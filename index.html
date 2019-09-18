@@ -23,7 +23,7 @@
 
 	<main>
 
-    <section class='product' id="product-1">
+    <section class='hidden' class='product'  id="product-1">
 			<h2>Assignment 1</h2>
 			<p>
 				Create an app that lets users choose to display between 1 and 50 random dog images, then prints the results to the console. The app should feature a form with a required input where users indicate the number of images to retrieve, and the input should default to 3. Use the endpoint described in the "DISPLAY MULTIPLE RANDOM IMAGES FROM ALL DOGS COLLECTION" section of this page of the DogAPI docs.
@@ -38,10 +38,9 @@
 		</section>
 
 		<section class='product' id="product-2">
-			<h2>Assignment 2</h2>
+			<h2>Display between 1 and 50 random dog images</h2>
 			<p>
-				Building on the previous app, create an app that lets users choose to display between 1 and 50 random dog images, then loads the images in the console. This app should adhere to all of the requirements from the first one, in addition to displaying the images in the DOM.
-			</p>
+					Fetch and displaying the images in the DOM. In addition to loading the images in the console.</p>
 			<form id='js-form-2'>
 				<fieldset>
 				 <legend>Submit to fetch dog photos:</legend>
@@ -57,20 +56,31 @@
 			</div>
 		</section>
 		<section class='product' id="product-3">
-			<h2>Assignment 3</h2>
-
+			<h2>Load a single image for a specific breed.</h2>
 			<p>
-				Create an app that loads a single random image for a specific breed, based on a user input. This app should account for the happy case when the breed is found, as well as the unhappy case when it is not. Use the endpoint described in the "RANDOM IMAGE FROM A BREED COLLECTION" section of this page of the DogAPI docs. Note that the API will return an HTTP status code of 404 along with a JSON object with info about the error if a request is made for a breed that can't be found.
+				Based on a user input. This app should account for the happy case when the breed is found, as well as the unhappy case when it is not. Use the endpoint described in the "RANDOM IMAGE FROM A BREED COLLECTION" section of this page of the DogAPI docs. Note that the API will return an HTTP status code of 404 along with a JSON object with info about the error if a request is made for a breed that can't be found.
 			</p>
 			<form id='js-form-3'>
 				<fieldset>
 				 <legend>Submit to fetch dog photos:</legend>
-				 What breed to fetch?: <input type="text" id="js-input-3" placeholder="enter a breed" min="1" max="50" required><br>
+				 	Breed to fetch: <input type="text" id="js-input-3" placeholder="   enter a breed" min="1" max="50" required><br>
 				 <input type="submit" value="Submit">
 				</fieldset>
 			</form>
 		</section>
 
+		<section class='product' id="product-4">
+			<p>"bullterrier""staffordshire""cairn""cattledog""chihuahua""chow"</p>
+			<P>"clumber""cockapoo""collie""border""coonhound""corgi""cardigan""cotondetulear"<p>
+			<P>"dachshund""dalmatian""dane""deerhound""dingo""doberman""elkhound""entlebucher"</P>
+			<P>"eskimo""frise""germanshepherd""groenendael""hound""husky""keeshond""kelpie"</p>
+			<P>"komondor""kuvasz""labrador""leonberg""lhasa""malamute""malinois""maltese""mastiff"</P>
+			<p>"pinscher""miniature""pointer""german","germanlonghair""pomeranian""poodle""pug""puggle"</P>
+			<p>"mexicanhairless""mix""mountain""newfoundland""otterhound""papillon""pekinese""pembroke"</P>
+			<p>"pyrenees""redbone""retriever""ridgeback""rottweiler""saluki""samoyed""schipperke"</P>
+			<p>"schnauzer""setter""sheepdog""shiba""shihtzu""spaniel""springer""stbernard""terrier"</P>
+			<p>"vizsla""whippet""wolfhound"</p>	
+		</section>
 	</main>
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 			crossorigin="anonymous"></script>
     <script src="script.js"></script>

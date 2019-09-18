@@ -75,14 +75,14 @@ function watchForms() {
         for(let i=0; i<numOfDogs; i++){
             fetchRandom();
         }
-        html2 = "<p> Dogs: </p>";
+        html2 = "";
     });
     $('#js-form-3').submit(event => {
         removeHiddenSec();
         let breed = document.getElementById("js-input-3").value;
         event.preventDefault();
         fetchRandomBreed(breed); 
-        html3 = "<p> Dogs: </p>";
+        html3 = "";
     });
 }
 
